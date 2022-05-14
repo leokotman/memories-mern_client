@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Posts from './components/Posts/Posts.js';
+import Form from './components/Form/Form.js';
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import headerImg from "./images/photos.jpg";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className="App">
+      <Container>
+        <header>
+          <h1>Memories</h1>
+          <img src={headerImg} alt="memories header" width="100"  />
+        </header>
+      </Container>
+      <Container>
+        <Row>
+          <Col sm={12} xs={12} md={8} lg={8} xl={10} >
+            <Posts />
+          </Col>
+          <Col>
+            <Form />
+          </Col>
+        </Row>
+      </Container>
+    </Container>
   );
 }
 
