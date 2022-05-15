@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Posts from './components/Posts/Posts.js';
-import Form from './components/Form/Form.js';
+import CreatePost from './components/CreatePost/CreatePost.js';
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -21,11 +21,11 @@ function App() {
       </Container>
       <Container>
         <Row>
-          <Col sm={12} xs={12} md={8} lg={8} xl={10} >
+          <Col sm={12} xs={12} md={8} lg={8} xl={8} >
             <Posts />
           </Col>
           <Col>
-            <Form />
+            <CreatePost />
           </Col>
         </Row>
       </Container>

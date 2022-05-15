@@ -4,7 +4,8 @@ import "./Posts.css";
 const Posts = () => {
   return (
     <section className="posts">
-      Posts
+      <Post />
+      <Post />
       <Post />
       <Post />
       <Post />

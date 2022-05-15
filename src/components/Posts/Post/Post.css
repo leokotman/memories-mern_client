@@ -1,3 +1,29 @@
 .post {
-  max-width: max-content;
+  max-width: 45%;
+}
+.post .card-img {
+  height: 40%;
+  filter: brightness(0.8);
+}
+.post .card-img-overlay{
+  height: 40%;
+}
+.card-img-overlay {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.card-img-overlay .actionImg:hover {
+  background-color: rgba(223, 215, 215, 0.418);
+  border-radius: 50%;
+}
+.card-footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.card-footer button {
+  font-size: .6rem;
+  padding: 0;
 }
