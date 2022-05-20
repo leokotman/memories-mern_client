@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import moment from 'moment'
 
 import "./Post.css";
 import Card from "react-bootstrap/Card";
@@ -10,32 +11,32 @@ import trashEmpty from "../../../images/trash-can_empty.svg";
 import trashColour from "../../../images/trash-can_colour.svg";
 import dots from "../../../images/3dots.svg";
 
-const Post = () => {
+const Post = ({post}) => {
   const [likeSrc, setLikeSrc] = useState(likeImgEmpty);
   const [deleteSrc, setDeleteSrc] = useState(trashEmpty);
 
   return (
     <Card className="post">
-      <Card.Img src={exampleImg} width="100px" />
+      <Card.Img src={post.selectedFiles} width="100px" />
       <Card.ImgOverlay>
         <div>
-          <Card.Title as="h4">Creator</Card.Title>
-          <Card.Text>Date created</Card.Text>
+          <Card.Title as="h4">{post.creator}</Card.Title>
+          <Card.Text>{ moment(post.createdAt).fromNow() }</Card.Text>
         </div>
         <img src={dots} width="20" className="actionImg"/>
       </Card.ImgOverlay>
       <Card.Body>
-        <Card.Subtitle className="text-muted">Tags</Card.Subtitle>
-        <Card.Title>Post Title</Card.Title>
+        <Card.Subtitle className="text-muted">{post.tags.map((tag) => `#${tag} `)}</Card.Subtitle>
+        <Card.Title>{post.title}</Card.Title>
         <Card.Text>
-          Post message long text, long text,long text,long text,
+          {post.message}
         </Card.Text>
       </Card.Body>
       <Card.Footer>
         <Button variant="light" onMouseEnter={() => setLikeSrc(likeImgColour)} onMouseLeave={() => setLikeSrc(likeImgEmpty)} >
           <img src={likeSrc} width="20" />
           LIKE
-          <span> №</span>
+          <span> {post.likeCount}</span>
         </Button>
         <Button variant="light" onMouseEnter={() => setDeleteSrc(trashColour)} onMouseLeave={() => setDeleteSrc(trashEmpty)}>
           <img src={deleteSrc} width="20"/>
