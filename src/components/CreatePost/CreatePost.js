@@ -16,7 +16,7 @@ const CreatePost = () => {
     tags: "",
     selectedFile: "",
     likeCount: 0,
-    createdAt: ""
+    createdAt: new Date()
   });
 
   const dispatch = useDispatch();

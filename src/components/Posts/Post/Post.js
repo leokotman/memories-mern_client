@@ -17,7 +17,7 @@ const Post = ({post}) => {
 
   return (
     <Card className="post">
-      <Card.Img src={post.selectedFiles} width="100px" />
+      <Card.Img src={post.selectedFile} width="100px" />
       <Card.ImgOverlay>
         <div>
           <Card.Title as="h4">{post.creator}</Card.Title>
