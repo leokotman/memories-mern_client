@@ -1,10 +1,12 @@
-import axios from 'axios';
+import axios from "axios";
 
 const url = "http://localhost:5000/posts";
 
 export const fetchPosts = () => axios.get(url);
-export const createPost = (newPost) => axios({
-  method: "post",
-  url: url,
-  data: newPost
-});
+export const createPost = (newPost) =>
+	axios({
+		method: "post",
+		url: url,
+		data: newPost,
+	});
+export const updatePost = (id, updatedPost) => axios.patch(`${url}/${id}`, updatedPost);

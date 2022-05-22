@@ -11,7 +11,7 @@ import trashEmpty from "../../../images/trash-can_empty.svg";
 import trashColour from "../../../images/trash-can_colour.svg";
 import dots from "../../../images/3dots.svg";
 
-const Post = ({post}) => {
+const Post = ({post, setCurrentId}) => {
     const [likeSrc, setLikeSrc] = useState(likeImgEmpty);
     const [deleteSrc, setDeleteSrc] = useState(trashEmpty);
 
@@ -23,7 +23,7 @@ const Post = ({post}) => {
                     <Card.Title as="h4">{post.creator}</Card.Title>
                     <Card.Text>{moment(post.createdAt).fromNow()}</Card.Text>
                 </div>
-                <img src={dots} width="20" className="actionImg" alt="action" />
+                <img src={dots} width="20" className="actionImg" alt="action" onClick={()=> setCurrentId(post._id)} />
             </Card.ImgOverlay>
             <Card.Body>
                 <Card.Subtitle className="text-muted">

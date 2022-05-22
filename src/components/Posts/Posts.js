@@ -3,10 +3,8 @@ import Spinner from "react-bootstrap/Spinner";
 import Post from "./Post/Post.js";
 import "./Posts.css";
 
-const Posts = () => {
+const Posts = ({setCurrentId}) => {
   const posts = useSelector((state) => state.posts);
-
-  console.log(posts);
 
   return (
     <section className="posts">
@@ -17,7 +15,7 @@ const Posts = () => {
       ) :
       (
       posts.map((post) => (
-        <Post key={post._id} post={post} />
+        <Post key={post._id} post={post} setCurrentId={setCurrentId} />
       ))
       )}
     </section>
