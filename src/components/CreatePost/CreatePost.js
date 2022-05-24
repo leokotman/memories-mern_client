@@ -55,7 +55,7 @@ const CreatePost = ({ currentId, setCurrentId }) => {
 
 	return (
 		<section className="createPost">
-			<Card>
+			<Card className={currentId ? "editPost" : ""}>
 				<h2>{currentId ? 'Edit' : 'Create'}  a memory</h2>
 				<Form autoComplete="off" onSubmit={handleSubmit}>
 					<Form.Group className="mb-3" controlId="formCreator">

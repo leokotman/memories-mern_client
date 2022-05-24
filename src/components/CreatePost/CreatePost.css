@@ -2,3 +2,7 @@
 .createPost .card {
   padding: 1rem;
 }
+
+.editPost h2{
+  background-color:lightsteelblue;
+}

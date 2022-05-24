@@ -1,19 +1,30 @@
 import {useState} from "react";
+import { useDispatch } from "react-redux";
 import moment from "moment";
 
 import "./Post.css";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import exampleImg from "../../../images/photos.jpg";
 import likeImgColour from "../../../images/like_colour.svg";
 import likeImgEmpty from "../../../images/like_empty.svg";
 import trashEmpty from "../../../images/trash-can_empty.svg";
 import trashColour from "../../../images/trash-can_colour.svg";
 import dots from "../../../images/3dots.svg";
+import { deletePost } from "../../../actions/posts";
 
 const Post = ({post, setCurrentId}) => {
     const [likeSrc, setLikeSrc] = useState(likeImgEmpty);
     const [deleteSrc, setDeleteSrc] = useState(trashEmpty);
+    const dispatch = useDispatch();
+
+    const removePost = (id) => {
+        if (window.confirm("Do you really want to delete this post?")) {
+            console.log("This post was deleted", post);
+            dispatch(deletePost(id));
+        } else {
+            console.log("The post wasn't deleted", post);;
+        }
+    };
 
     return (
         <Card className="post">
@@ -45,6 +56,7 @@ const Post = ({post, setCurrentId}) => {
                         variant="light"
                         onMouseEnter={() => setDeleteSrc(trashColour)}
                         onMouseLeave={() => setDeleteSrc(trashEmpty)}
+                        onClick={() => removePost(post._id)}
                     >
                         <img src={deleteSrc} width="20" alt="delete" />
                         DELETE
