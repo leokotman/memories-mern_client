@@ -34,3 +34,9 @@
     font-size: 0.6rem;
     padding: 0;
 }
+
+@media screen and (max-width: 660px) {
+    .post {
+        max-width:none;
+    }
+}
