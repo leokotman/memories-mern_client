@@ -1,16 +1,20 @@
 import {useState} from "react";
 import { useDispatch } from "react-redux";
+import { deletePost, likePost } from "../../../actions/posts";
 import moment from "moment";
 
 import "./Post.css";
+
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+
+//post images
 import likeImgColour from "../../../images/like_colour.svg";
 import likeImgEmpty from "../../../images/like_empty.svg";
 import trashEmpty from "../../../images/trash-can_empty.svg";
 import trashColour from "../../../images/trash-can_colour.svg";
 import dots from "../../../images/3dots.svg";
-import { deletePost } from "../../../actions/posts";
+
 
 const Post = ({post, setCurrentId}) => {
     const [likeSrc, setLikeSrc] = useState(likeImgEmpty);
@@ -25,6 +29,10 @@ const Post = ({post, setCurrentId}) => {
             console.log("The post wasn't deleted", post);;
         }
     };
+
+    const like = (id) => {
+        dispatch(likePost(id));
+    }
 
     return (
         <Card className="post">
@@ -47,6 +55,7 @@ const Post = ({post, setCurrentId}) => {
                         variant="light"
                         onMouseEnter={() => setLikeSrc(likeImgColour)}
                         onMouseLeave={() => setLikeSrc(likeImgEmpty)}
+                        onClick={() => like(post._id)}
                     >
                         <img src={likeSrc} width="20" alt="like" />
                         LIKE
