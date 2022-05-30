@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/%20memories-mern_client/static/css/main.b9cf50bd.css",
+    "main.js": "/%20memories-mern_client/static/js/main.e91da908.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/%20memories-mern_client/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/photos.jpg": "/%20memories-mern_client/static/media/photos.802ee0a0ec42c6dfc0a0.jpg",
+    "static/media/like_colour.svg": "/%20memories-mern_client/static/media/like_colour.971dce9e092ac66a9bb38dd854bc2e11.svg",
+    "static/media/like_empty.svg": "/%20memories-mern_client/static/media/like_empty.51c9503b2b83e32656e1e7f30c36cd5f.svg",
+    "static/media/trash-can_empty.svg": "/%20memories-mern_client/static/media/trash-can_empty.cf8faaf9b1dd52dad9eacec5b8b18f61.svg",
+    "static/media/trash-can_colour.svg": "/%20memories-mern_client/static/media/trash-can_colour.c38753a05e505c4618f33acc12fa68d3.svg",
+    "static/media/3dots.svg": "/%20memories-mern_client/static/media/3dots.d7a0f4de45e6fbec2d04ef85fe943d32.svg",
+    "index.html": "/%20memories-mern_client/index.html",
+    "main.b9cf50bd.css.map": "/%20memories-mern_client/static/css/main.b9cf50bd.css.map",
+    "main.e91da908.js.map": "/%20memories-mern_client/static/js/main.e91da908.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/%20memories-mern_client/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9cf50bd.css",
+    "static/js/main.e91da908.js"
+  ]
+}
